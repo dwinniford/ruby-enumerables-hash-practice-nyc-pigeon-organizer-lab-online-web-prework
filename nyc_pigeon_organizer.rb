@@ -14,7 +14,7 @@ end
 
 
 def fill_indivual_hash(data, new_data, name_key)
-  data.each_with_object( {} ) do |(attribute, attribute_hash), new_data|
+  data.each_with_object( new_data ) do |(attribute, attribute_hash), new_data|
     attribute_hash.each_with_object(new_data) do | (attribute_quality, name_array), new_data |
       name_array.each_with_object(new_data) do | i, new_data |
         if i == name_key && !new_data[name_key][attribute]
